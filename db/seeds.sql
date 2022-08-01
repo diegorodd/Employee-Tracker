@@ -20,3 +20,10 @@ VALUES
 
     INSERT INTO employee
     (first_name, last_name, role_id, manager_id)
+
+    ('mike','amaya', 1, NULL),
+    ('david','amaya', 2, 1),
+    ('chris','amaya', 3, NULL),
+    ('julian','amaya', 4, 3),
+    ('jojo','amaya', 4, NULL),
+    ('juan','amaya', 5, 6),
