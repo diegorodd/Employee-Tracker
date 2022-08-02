@@ -85,3 +85,69 @@ function runPrompts() {
     }
     )
 }
+
+function viewAllEmployees() {
+    db.allEmployees()
+        .then(([rows]) => {
+            let employees = rows;
+            console.log("\n");
+            console.table(employees);
+        })
+        .then(() => runPrompts());
+}
+
+
+function viewAllRoles() {
+    db.allRoles()
+        .then(([rows]) => {
+            let roles = rows;
+            console.log("\n");
+            console.table(roles);
+        })
+        .then(() => runPrompts());
+}
+
+
+function viewAllDepartments() {
+    db.allDepartments()
+        .then(([rows]) => {
+            let departments = rows;
+            console.log("\n");
+            console.table(departments);
+        })
+        .then(() => runPrompts());
+}
+
+// Add a role
+function createRole() {
+    db.allDepartments()
+        .then(([rows]) => {
+            let departments = rows;
+            const departmentChoices = departments.map(({ id, name }) => ({
+                name: name,
+                value: id
+            }));
+
+            prompt([
+                {
+                    name: "title",
+                    message: "What is the name of the role?"
+                },
+                {
+                    name: "salary",
+                    message: "What is the salary rate?"
+                },
+                {
+                    type: "list",
+                    name: "department_id",
+                    message: "Which department does the role fall in under?",
+                    choices: departmentChoices
+                }
+            ])
+                .then(role => {
+                    db.addRole(role)
+                        .then(() => console.log(`Added ${role.title} to the database`))
+                        .then(() => runPrompts())
+                })
+        })
+}
