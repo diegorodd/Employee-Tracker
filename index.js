@@ -118,7 +118,7 @@ function viewAllDepartments() {
         .then(() => runPrompts());
 }
 
-// Add a role
+// Add role
 function createRole() {
     db.allDepartments()
         .then(([rows]) => {
@@ -152,7 +152,7 @@ function createRole() {
         })
 }
 
-// Add a department
+// Add department
 function createDepartment() {
     prompt([
         {
@@ -168,7 +168,7 @@ function createDepartment() {
         })
 }
 
-// Add an employee
+// Add employee
 function createEmployee() {
     prompt([
         {
