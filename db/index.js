@@ -18,6 +18,7 @@ class DB{
     }
     // Create a new employee
   createEmployee(employee) {
+    return this.connection.promise().query("INSERT INTO employee SET ?", employee);
 
 }
 
@@ -38,11 +39,15 @@ updateEmployeeManager(employeeId, managerId) {
 
 // Find all roles, join with departments to display the department name
 findAllRoles() {
-    
+    return this.connection.promise().query(
+        "SELECT role.id, role.title, department.name AS department, role.salary FROM role LEFT JOIN department on role.department_id = department.id;"
+    );
+
 }
 
 // Create a new role
 createRole(role) {
+    return this.connection.promise().query("INSERT INTO role SET ?", role);
 
 }
 
@@ -53,6 +58,9 @@ removeRole(roleId) {
 
 // Find all departments
 findAllDepartments() {
+    return this.connection.promise().query(
+        "SELECT department.id, department.name FROM department;"
+    );
 
 }
 
@@ -63,6 +71,8 @@ viewDepartmentBudgets() {
 
 // Create a new department
 createDepartment(department) {
+    return this.connection.promise().query("INSERT INTO department SET ?", department);
+    
 
 }
 
