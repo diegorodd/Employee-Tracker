@@ -13,7 +13,7 @@ INSERT INTO role
 VALUES
     ('HR Manager', 100000, 1),
     ('HR', 50000, 1),
-    ('Sales', 65000, 2),
+    ('Sales', 65000, 2), 
     ('Human Resources', 195000, 3),
     ('Lawyer', 110000, 4),
     ('Accountant', 90000, 4);

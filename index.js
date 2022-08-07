@@ -162,7 +162,7 @@ function createDepartment() {
     ])
         .then(res => {
             let name = res;
-            db.addDepartment(name)
+            db.createDepartment(name)
                 .then(() => console.log(`Added ${name.name} to the database`))
                 .then(() => runPrompts())
         })
