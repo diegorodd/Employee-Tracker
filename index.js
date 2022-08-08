@@ -87,7 +87,7 @@ function runPrompts() {
 }
 
 function viewAllEmployees() {
-    db.allEmployees()
+    db.findAllEmployees()
         .then(([rows]) => {
             let employees = rows;
             console.log("\n");
@@ -98,7 +98,7 @@ function viewAllEmployees() {
 
 
 function viewAllRoles() {
-    db.allRoles()
+    db.findAllRoles()
         .then(([rows]) => {
             let roles = rows;
             console.log("\n");
@@ -109,7 +109,7 @@ function viewAllRoles() {
 
 
 function viewAllDepartments() {
-    db.allDepartments()
+    db.findAllDepartments()
         .then(([rows]) => {
             let departments = rows;
             console.log("\n");
@@ -170,6 +170,7 @@ function createDepartment() {
 
 // Add employee
 function createEmployee() {
+
     prompt([
         {
             name: "first_name",
