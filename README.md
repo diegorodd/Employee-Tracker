@@ -1,5 +1,9 @@
 # Employee-Tracker
 
+# github https://github.com/diegorodd/Employee-Tracker
+
+# walkthrough  https://drive.google.com/file/d/1Nt4SrVXJCSSDhpgFumucTruOuNClZZNC/view
+
 # Description
 A command-line application to manage a company's employee database, using Node.js, MySQL.
 
